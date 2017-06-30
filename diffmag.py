@@ -64,27 +64,28 @@ def find_diff_mag(magnitude1_1, magnitude2_1, idx1, idx2,
 			index of the stars in epic one
 		idx2: list or numpy array
 			indices of the stars in epic two that match the stars in idx1
-		magnitude1_2: list or numpy array
+		magnitude1_2: optional; list or numpy array
 			magnitude in epic one in a second chosen band
-		magnitude2_2: list or numpy array
+		magnitude2_2: optional; list or numpy array
 			magnitude in epic two in a second chosen band
-		magnitude1_3: list or numpy array
+		magnitude1_3: optional; list or numpy array
 			magnitude in epic one in a third chosen band
-		magnitude2_3: list or numpy array
+		magnitude2_3: optional; list or numpy array
 			magnitude in epic two in a third chosen band
-		right_ascen1: list or numpy array
+		right_ascen1: optional; list or numpy array
 			ra of the stars in epic one
-		right_ascen2: list or numpy array
+		right_ascen2: optional; list or numpy array
 			ra of the stars in epic two
-		declination1: list or numpy array
+		declination1: optional; list or numpy array
 			dec of the stars in epic one
-		declination2: list or numpy array
+		declination2: optional; list or numpy array
 			dec of the stars in epic two
     
 	This function creates an table with columns made from the input data and the difference between each star's magnitude(from one epic to the next) in the bands given as well as the difference in ra and dec (from one epic to the next). It returns the newly created table as a pandas DataFrame object.
 
 	This function can take the magnitudes of up to three different bands of light. Only one is required for the function to run.
 	"""
+
 	## create emtpy dictionary with columns for the data
 	diffapexmags = {}
 	diffapexmags['diffmag_1'] = []
@@ -127,7 +128,7 @@ def find_diff_mag(magnitude1_1, magnitude2_1, idx1, idx2,
 			diffapexmags['mag1_1'].append(mag1_1)
 			diffapexmags['mag2_1'].append(mag2_1)
 
-			if magnitude1_2 == None:
+			if magnitude1_2 is None:
 				mag1_2 = np.nan
 				mag2_2 = np.nan
 				diffmag_2 = np.nan
@@ -139,7 +140,7 @@ def find_diff_mag(magnitude1_1, magnitude2_1, idx1, idx2,
 			diffapexmags['mag1_2'].append(mag1_2)
 			diffapexmags['mag2_2'].append(mag2_2)
 		    
-			if magnitude1_3 == None:
+			if magnitude1_3 is None:
 				mag1_3 = np.nan
 				mag2_3 = np.nan
 				diffmag_3 = np.nan
@@ -151,7 +152,7 @@ def find_diff_mag(magnitude1_1, magnitude2_1, idx1, idx2,
 			diffapexmags['mag1_3'].append(mag1_3)
 			diffapexmags['mag2_3'].append(mag2_3)
 
-			if right_ascen1 == None:
+			if right_ascen1 is None:
 				ra1 = np.nan
 				ra2 = np.nan
 				diff_ra = np.nan
@@ -163,7 +164,7 @@ def find_diff_mag(magnitude1_1, magnitude2_1, idx1, idx2,
 			diffapexmags['ra1'].append(ra1)
 			diffapexmags['ra2'].append(ra2)
 
-			if declination1 == None:
+			if declination1 is None:
 				dec1 = np.nan
 				dec2 = np.nan
 				diff_dec = np.nan
