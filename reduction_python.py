@@ -24,7 +24,7 @@ def reduce_data(data_path, flat_path, dark_path, bias_path, 		reduced_image_fold
 		bias_path: string 
 			The path to your bias images.
 		reduced_image_folder: string
-			How you want your reduced images saved.
+			Where you want your reduced images saved.
 		over_write: boolean, optional
 			Whether you want the files saved to the reduced image
 			folder overwritten by the system. The default is
