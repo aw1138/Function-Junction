@@ -4,6 +4,10 @@ def reduce_data(data_path, flat_path, dark_path, bias_path, 		reduced_image_fold
 	A function to simply reduce astronomical data in Python. Needed 
 	packages: matplotlib, numpy, astropy, scipy, glob, and os.
 
+	This function takes the paths to your science and calibration data
+	and returns your reduced science images with the same names as the
+	original input science images.
+
 	This function currently has no way to differentiate images with 
 	different exposure lengths from the darks and/or different filters 
 	from the flats. MAKE SURE YOU PUT IN THE CORRECT IMAGES.
